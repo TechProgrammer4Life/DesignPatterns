@@ -1,39 +1,26 @@
 package factoryMethod;
 
-
-interface Shape {
-    void draw();
-}
-
-class Circle implements Shape {
-    public void draw() {
+// Factory Method Design Pattern - Object Creation loosely coupled to the factory
+interface Shape { void draw(); }
+class Circle implements Shape { public void draw() {
         System.out.println("Drawing a Circle");
-    }
-}
-
-class Rectangle implements Shape {
-    public void draw() {
+    } }
+class Rectangle implements Shape { public void draw() {
         System.out.println("Drawing a Rectangle");
-    }
-}
+    } }
 
-abstract class ShapeFactory {
-    public abstract Shape createShape(); // Factory Method
-}
 
-class CircleFactory extends ShapeFactory {
-    public Shape createShape() {
+// Factory Method Design Pattern - Object Creation loosely coupled to the factory
+abstract class ShapeFactory { public abstract Shape createShape(); }
+class CircleFactory extends ShapeFactory { public Shape createShape() {
         return new Circle();
-    }
-}
-
-class RectangleFactory extends ShapeFactory {
-    public Shape createShape() {
+    } }
+class RectangleFactory extends ShapeFactory { public Shape createShape() {
         return new Rectangle();
-    }
-}
+    } }
 
 
+//Main Class to demonstrate Factory Method Design Pattern
 public class factoryMethodDesign {
     public static void main(String[] args) {
         ShapeFactory factory1 = new CircleFactory();
